@@ -3,6 +3,9 @@ package com.example.rocca.gamesreviews;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -78,7 +81,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_elenco) {
 
         } else if (id == R.id.nav_chisiamo) {
-
+            Chisiamo_Fragment who = new Chisiamo_Fragment();
+            FragmentManager fragmentManager = this.getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.spazio_fragment, who)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                    .commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
