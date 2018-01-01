@@ -7,10 +7,12 @@ package com.example.rocca.gamesreviews;
 public class Gioco {
     private String nome;
     private String descrizione;
+    private int idIMM;
 
-    public Gioco(String titolo, String descrizione) {
+    public Gioco(String titolo, String descrizione, int id) {
         this.nome = titolo;
         this.descrizione = descrizione;
+        this.idIMM=id;
     }
 
     public String getNome() {
@@ -19,6 +21,10 @@ public class Gioco {
 
     public void setNome(String titolo) {
         this.nome = titolo;
+    }
+
+    public int getIdIMM() {
+        return idIMM;
     }
 
     public String getDescrizione() {

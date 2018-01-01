@@ -22,13 +22,19 @@ public class Lista_giochi extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         List <Gioco> list = new LinkedList<Gioco>();
-        list.add(new Gioco("Police","Don't stand so close to me"));
-        list.add(new Gioco("Rihanna","Love the way you lie"));
-        list.add(new Gioco("Marco Mengoni","L'essenziale"));
+        list.add(new Gioco("Fifa18","Calcio", R.drawable.fifa18));
+        list.add(new Gioco("Destiny","sd",R.drawable.dest));
+        list.add(new Gioco("Super mario","dsf",R.drawable.mario));
         AdapterItem adapter = new AdapterItem(this, R.layout.elemlista, list);
         ListView listView = (ListView)findViewById(R.id.lista);
         listView.setAdapter(adapter);
-
+        /*ArrayList autori = new ArrayList();
+        autori.add(new Gioco("Fifa18","Calcio", R.drawable.fifa18));
+        autori.add(new Gioco("Destiny","sd",R.drawable.dest));
+        autori.add(new Gioco("Super mario","dsf",R.drawable.mario));
+        ListView listaAutori = (ListView) findViewById(R.id.lista);
+        AdapterItem madapter = new AdapterItem(this, autori);
+        listaAutori.setAdapter(madapter);*/
     }
 
 
