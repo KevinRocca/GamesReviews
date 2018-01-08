@@ -1,11 +1,13 @@
 package com.example.rocca.gamesreviews;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.LinkedList;
@@ -35,6 +37,16 @@ public class Giochi extends Fragment {
         AdapterItem adapter = new AdapterItem(getActivity().getApplicationContext(), R.layout.elemlista, list);
         ListView listView = (ListView)view.findViewById(R.id.lista);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adattatore, final View componente, int pos, long id){
+                Intent nuovapagina = new Intent(getActivity().getApplicationContext(), SchermataGame.class);
+                Gioco item = (Gioco)adattatore.getItemAtPosition(pos);
+                String name = item.getNome();
+                nuovapagina.putExtra("Vocecliccata", name);
+                startActivity(nuovapagina);
+            }
+        });
         return view;
     }
 
