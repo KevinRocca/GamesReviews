@@ -88,8 +88,13 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             // Handle the camera action
         } else if (id == R.id.nav_elenco) {
-            Intent intent = new Intent(this, Lista_giochi.class);
-            startActivity(intent);
+            Giochi g = new Giochi();
+            FragmentManager fragmentManager = this.getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.spazio_fragment, g)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                    .commit();
+
 
         } else if (id == R.id.nav_chisiamo) {
             Chisiamo_Fragment who = new Chisiamo_Fragment();
